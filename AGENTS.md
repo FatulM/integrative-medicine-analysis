@@ -2,7 +2,7 @@
 
 ## Project Description
 
-This is a static Persian (Farsi) website analyzing the debate between traditional medicine and modern medicine in Iran. The site is built from `content.md` and `references.md` source files, with all HTML/CSS/JS contained in a single `index.html` file. The website presents a philosophical and scientific analysis of the conflict between conventional medicine and traditional/complementary medicine in the Iranian context, covering topics like medical nihilism, placebo effects, acupuncture mechanisms, medicalization of normal life, and the distinction between academic traditional medicine and pseudoscience.
+This is a static Persian (Farsi) website analyzing the debate between traditional medicine and modern medicine in Iran. The site is built from `content.md` and `references.md` source files, with all HTML/CSS/JS contained in a single `index.html` file.
 
 ## Conventions
 
@@ -20,10 +20,10 @@ This is a static Persian (Farsi) website analyzing the debate between traditiona
 
 ```
 integrative-medicine-analysis/
-├── index.html           # Complete website (HTML/CSS/JS)
-├── content.md           # Main Persian content
+├── index.html           # Website (HTML/CSS/JS)
+├── content.md           # Main content
 ├── references.md        # Bibliography & references
-├── infographic.png      # Main infographic image
+├── infographic.png      # Infographic image
 ├── README.md            # Project overview
 ├── LICENSE              # License file
 ```
