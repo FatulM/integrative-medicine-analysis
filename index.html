@@ -34,6 +34,31 @@
             scroll-behavior: smooth;
         }
 
+        .github-ribbon {
+            position: fixed;
+            top: 36px;
+            right: -62px;
+            z-index: 2000;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #111827, #0f766e);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            padding: 10px 72px;
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.2);
+            transform: rotate(45deg);
+            transform-origin: center center;
+            transition: filter 0.2s ease;
+        }
+
+        .github-ribbon:hover {
+            filter: brightness(1.08);
+        }
+
         /* هدر و ناوبری */
         header {
             background-color: var(--card-bg);
@@ -306,6 +331,7 @@
     </style>
 </head>
 <body>
+    <a class="github-ribbon" href="https://github.com/FatulM/integrative-medicine-analysis" target="_blank" rel="noopener noreferrer" aria-label="دنبال‌کننده پروژه در گیت‌هاب">برو به گیت‌هاب</a>
 
     <header>
         <div class="nav-container">
