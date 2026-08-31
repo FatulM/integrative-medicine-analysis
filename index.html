@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوای طب سنتی و پزشکی جدید: نگاهی ساده به علم و جامعه</title>
+    
+    <!-- اضافه کردن فونت وزیرمتن -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* تنظیمات پایه */
+        :root {
+            --primary-color: #0f766e; /* سبز-آبی تیره */
+            --secondary-color: #14b8a6; /* سبز روشن */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --heading-color: #0f172a;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 17px;
+            scroll-behavior: smooth;
+        }
+
+        /* هدر و ناوبری */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-weight: 900;
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* بخش هیرو (Hero) */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: white;
+            line-height: 1.4;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* محتوای اصلی */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* استایل کارت‌های بخش‌ها */
+        section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        /* کلاس برای انیمیشن اسکرول */
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* استثنا برای بخش منابع تا از همان ابتدا ظاهر شود */
+        #references-section {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            padding: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul {
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        /* استایل اینفوگرافیک */
+        .infographic-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .infographic-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: block;
+            margin: 0 auto;
+            border: 4px solid white;
+        }
+        
+        .infographic-caption {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 10px;
+        }
+
+        /* استایل بخش منابع (آکاردئون) */
+        .collapsible {
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            padding: 18px 25px;
+            width: 100%;
+            border: none;
+            text-align: right;
+            outline: none;
+            font-size: 1.2rem;
+            font-family: inherit;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible:hover, .collapsible.active {
+            background-color: var(--heading-color);
+        }
+
+        .collapsible:after {
+            content: '\002B'; /* علامت مثبت */
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .collapsible.active:after {
+            content: "\2212"; /* علامت منفی */
+        }
+
+        .content {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background-color: transparent;
+        }
+
+        .content-inner {
+            padding: 20px 0;
+        }
+
+        .ref-category {
+            color: var(--primary-color);
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-bottom: 2px dashed #cbd5e1;
+            padding-bottom: 5px;
+        }
+
+        .ref-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-right: 4px solid var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .ref-title {
+            font-weight: bold;
+            color: var(--heading-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .ref-en {
+            font-size: 0.9rem;
+            color: #475569;
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 12px;
+            font-family: Tahoma, Arial, sans-serif;
+            background-color: #f1f5f9;
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: block;
+            border-left: 3px solid #cbd5e1;
+        }
+
+        .ref-desc {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin-bottom: 0;
+        }
+
+        /* فوتر */
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background-color: var(--heading-color);
+            color: white;
+            margin-top: 60px;
+        }
+
+        /* ریسپانسیو برای موبایل */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            section {
+                padding: 25px;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">فلسفه علم و سلامت</a>
+            <ul class="nav-links">
+                <li><a href="#intro">مقدمه</a></li>
+                <li><a href="#section2">کلمات و تعاریف</a></li>
+                <li><a href="#section3">آزمایش داروها</a></li>
+                <li><a href="#section6">آشتی علم و سنت</a></li>
+                <li><a href="#references-section">منابع</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>دعوای طب سنتی و پزشکی جدید در ایران</h1>
+        <p>نگاهی ساده، منطقی و به دور از کلمات سخت، به یکی از بزرگ‌ترین مناقشات سلامت در جامعه امروز</p>
+    </div>
+
+    <main>
+        <!-- مقدمه -->
+        <section id="intro">
+            <h2>۱. مقدمه: دعوای دو نگاه متفاوت به سلامت</h2>
+            <p>اگر نگاهی به وضعیت درمان و سلامت در ایران بیندازیم، می‌بینیم که یک دعوای بزرگ در جریان است. از یک طرف، «پزشکی امروزی و رسمی» وجود دارد که حرف اول را در علم می‌زند و از طرف دیگر، «طب سنتی و گیاهی» روزبه‌روز در بین مردم طرفدار بیشتری پیدا می‌کند.</p>
+            <p>این دعوا فقط یک بحث ساده‌ی دانشگاهی نیست؛ بلکه تفاوت در دو نگاه کاملاً مختلف است. پزشکی امروزی روی «آمار و آزمایشگاه» تأکید دارد، اما طب سنتی می‌گوید باید به «کل بدن و تعادل آن» نگاه کرد. نتیجه‌ی این دعوا این شده که بیماران سرگردان شده‌اند و اعتماد مردم به علم و پزشکان کمتر شده است. به همین دلیل، باید ریشه‌ی این اختلاف را به زبان ساده بررسی کنیم.</p>
+        </section>
+
+        <!-- جایگاه اینفوگرافیک لنداسکیپ -->
+        <div class="infographic-container">
+            <img src="infographic.png" alt="اینفوگرافیک مقایسه طب سنتی و پزشکی جدید">
+            <p class="infographic-caption">خلاصه تصویری: تفاوت دیدگاه‌ها و رویکردها در نظام‌های درمانی مختلف</p>
+        </div>
+
+        <!-- بخش دوم -->
+        <section id="section2">
+            <h2>۲. کلمات را قاطی نکنیم: خطر وصل کردن طب به مقدسات</h2>
+            <p>بسیاری از سوءتفاهم‌های امروز به این دلیل است که ما معنی کلمات را با هم قاطی کرده‌ایم. برای فهمیدن این موضوع، باید تفاوت این چند مورد را بدانیم:</p>
+            <ul>
+                <li><strong>طب عربی:</strong> دانشی قدیمی است که اشتباهاً به عرب‌ها نسبت داده می‌شود. در حالی که دانشمندان بزرگی مثل ابن‌سینا و رازی ایرانی بودند، اما کتاب‌هایشان را به زبان علمی آن زمان (یعنی عربی) می‌نوشتند.</li>
+                <li><strong>طب سنتی:</strong> یک روش درمانی کاملاً طبیعی و بر اساس تجربه است که می‌گوید بدن از چهار طبع (دم، صفرا، سودا و بلغم) تشکیل شده است و ربطی به دین ندارد.</li>
+                <li><strong>طب مذهبی (ادعای طب اسلامی یا روایی):</strong> گروهی که توصیه‌های درمانی را از احادیث و روایات دینی بیرون می‌کشند.</li>
+            </ul>
+            <p><strong>خطر کجاست؟</strong> خطر اصلی زمانی است که عده‌ای طب سنتی و تجربی را به «مقدسات و دین» گره می‌زنند. در طول تاریخ، حتی علمای دین هم این احادیث را جزو توصیه‌های اخلاقی می‌دانستند، نه دستورات قطعی دینی. وقتی یک روش درمانی به مقدسات وصل شود، دیگر کسی جرئت نمی‌کند آن را نقد کند یا بگوید این روش اشتباه است. این کار باعث می‌شود راه برای پیشرفت علم بسته شود.</p>
+        </section>
+
+        <!-- بخش سوم -->
+        <section id="section3">
+            <h2>۳. مشکل آزمایش داروها: چرا حس خوبِ بیمار نادیده گرفته می‌شود؟</h2>
+            <p>یکی از بزرگ‌ترین دعواها بر سر کلمه‌ی «تأثیرگذاری» است. پزشکی جدید برای اینکه بفهمد یک دارو اثر دارد یا نه، آن را در شرایط سختِ آزمایشگاهی تست می‌کند. هدف آن‌ها این است که اثر خالصِ ماده شیمیایی را پیدا کنند و چیزهایی مثل «رابطه خوبِ پزشک و بیمار» یا «باور بیمار به خوب شدن» را حذف کنند (پزشکان امروزی به این حس خوب، اثر تلقینی یا دارونما می‌گویند).</p>
+            <p>اما مشکل همین‌جاست! در طب سنتی، بخش بزرگی از درمان به خاطر همان رابطه گرم بین طبیب و بیمار و آرامش روانی است. وقتی پزشکیِ امروزی این بخش مهم را در آزمایش‌هایش حذف می‌کند و به آن بی‌ارزش می‌گوید، در واقع بخشی از واقعیتِ درمان را نادیده گرفته است. ممکن است یک داروی گیاهی به خاطر ایجاد همین آرامش، درد بیمار را خیلی خوب کم کند، اما آزمایشگاه بگوید «این دارو بی‌اثر است».</p>
+        </section>
+
+        <!-- بخش چهارم -->
+        <section id="section4">
+            <h2>۴. آیا داروهای جدید همیشه معجزه می‌کنند؟</h2>
+            <p>برخی از فیلسوفان علم می‌گویند ما نباید بیش از حد به پزشکی امروزی خوش‌بین باشیم. دلیلشان هم ساده است: بدن انسان به قدری پیچیده است که پیدا کردن «داروهای معجزه‌آسا» (مثل پنی‌سیلین که یک‌باره عفونت را نابود می‌کند) بسیار نادر و کمیاب است.</p>
+            <p>این محققان می‌گویند شرکت‌های داروسازی گاهی در تأثیر داروهایشان اغراق می‌کنند و فقط نتایج مثبت را به ما نشان می‌دهند. پیشنهاد آن‌ها استفاده از «پزشکی ملایم» است. یعنی به جای اینکه سریعاً سراغ داروهای قوی و عمل‌های جراحی برویم، اجازه دهیم بدن روند طبیعی بهبودی خودش را طی کند، چون خیلی از داروها واقعاً اثر چشمگیری ندارند.</p>
+        </section>
+
+        <!-- بخش پنجم -->
+        <section id="section5">
+            <h2>۵. دو روی سکه در ایران: طب دانشگاهی در برابر مدعیان دروغین</h2>
+            <p>در ایرانِ امروز، ما با دو نوع طب سنتی روبه‌رو هستیم که باید حتماً آن‌ها را از هم جدا کنیم:</p>
+            <ul>
+                <li><strong>طب سنتی دانشگاهی:</strong> پزشکان متخصصی که کتاب‌های قدیمی را می‌خوانند، اما آن‌ها را با دستگاه‌ها و دانشِ امروزی آزمایش می‌کنند تا درست را از غلط تشخیص دهند.</li>
+                <li><strong>مدعیان دروغین (شبه‌علم):</strong> کسانی که تمام علم امروزی را رد می‌کنند، تخصص پزشکی ندارند و با استفاده از نام دین، جان مردم را به خطر می‌اندازند.</li>
+            </ul>
+            <p>دعوای اصلی در ایران، دعوای سنت و مدرنیته نیست؛ بلکه دعوای «عقل و منطق» در برابر «ادعاهای دروغین و خطرناک» است.</p>
+        </section>
+
+        <!-- بخش ششم -->
+        <section id="section6">
+            <h2>۶. کشف راز طب سوزنی: آشتی سنت و علم</h2>
+            <p>یکی از جذاب‌ترین اتفاقات علمی زمانی افتاد که علم امروزی توانست راز «طب سوزنی» را کشف کند. قرن‌ها می‌گفتند طب سوزنی بر اساس جریان انرژی‌های نامرئی در بدن کار می‌کند.</p>
+            <p>اما تحقیقات جدید نشان داد که ۸۰ درصدِ نقاط طب سوزنی، دقیقاً همان جاهایی هستند که «بافت‌های پیوندی» (پرده‌های نازک زیر پوست) قرار دارند. وقتی سوزن وارد پوست می‌شود و می‌چرخد، این بافت‌ها کشیده می‌شوند. این کشش باعث می‌شود بدن به طور طبیعی ماده‌ای ترشح کند که درد و التهاب را از بین می‌برد. در واقع، علم امروزی نشان داد که داستان‌های قدیمی درباره «انرژی»، در حقیقت همان واکنش‌های فیزیکی و طبیعی بدن ما هستند. این یک آشتی زیبا بین علم و سنت است.</p>
+        </section>
+
+        <!-- بخش هفتم -->
+        <section id="section7">
+            <h2>۷. وقتی زندگی عادی تبدیل به بیماری می‌شود!</h2>
+            <p>برخی از محققان ایرانی هشدار جالبی می‌دهند. آن‌ها می‌گویند پزشکی امروزی کاری کرده که بسیاری از اتفاقات طبیعی زندگی (مثل پیر شدن یا ریزش مو) به عنوان «بیماری» شناخته شوند تا برایشان دارو فروخته شود.</p>
+            <p>خیلی از مردم برای فرار از این وضعیت به طب سنتی پناه می‌برند، اما طب سنتی هم گاهی در همین تله می‌افتد و حتی بدتر عمل می‌کند! در برخی از شاخه‌های طب سنتی، تمام جزئیات زندگی شما (از اینکه چه می‌خورید، چقدر می‌خوابید، تا اینکه چه احساسی دارید) زیر ذره‌بین قرار می‌گیرد. به شما می‌گویند «مزاجت به هم ریخته» و برای هر کار عادیِ روزانه، یک تجویز یا پرهیز می‌دهند. این یعنی کنترلِ شدیدِ زندگی شما، به بهانه‌ی سلامتی.</p>
+        </section>
+
+        <!-- نتیجه‌گیری -->
+        <section id="conclusion">
+            <h2>۸. نتیجه‌گیری: به سوی سلامتی کامل و عاقلانه</h2>
+            <p>دعوای بین طب سنتی و پزشکی امروزی تنها با «عقلانیت و تفکر» حل می‌شود. هدف نهایی هر نوع درمانی، کم کردن درد و رنج انسان است و این هدف نباید قربانی تعصب یا پول درآوردن عده‌ای خاص شود.</p>
+            <p>ما به نگاهی نیاز داریم که به آن «سلامتِ کُلِ انسان» می‌گویند. یعنی بیمار فقط یک ماشین خراب نیست که نیاز به تعمیر قطعه داشته باشد؛ بلکه یک انسان است با احساسات و شرایط زندگی خاص خودش. پایان این دعوا زمانی است که ما «دقتِ علم امروزی» را با «نگاهِ کلی و پیشگیرانه طب سنتی» ترکیب کنیم و اجازه ندهیم مدعیان دروغین، با جان و روان مردم بازی کنند.</p>
+        </section>
+
+        <!-- بخش منابع (باز و بسته شونده) -->
+        <section id="references-section">
+            <button type="button" class="collapsible">منابع و مراجع علمی (برای مطالعه بیشتر)</button>
+            <div class="content">
+                <div class="content-inner">
+                    
+                    <h3 class="ref-category">۱. کتاب‌ها و منابع مرجع</h3>
+                    <div class="ref-item">
+                        <div class="ref-title">نیهیلیسم پزشکی - نویسنده: جیکوب استگننگا (۲۰۱۸)</div>
+                        <span class="ref-en">Stegenga, Jacob (2018). Medical Nihilism. Oxford University Press.</span>
+                        <p class="ref-desc">کتاب اصلی و جریان‌ساز استاد فلسفه پزشکی دانشگاه کمبریج در پیشنهادِ رویکرد «پزشکی ملایم» (Gentle Medicine).</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">فلسفه شبه‌علم: بازنگری در مسئله مرزبندی - ویراستاران: ماسیمو پیلیوچی و مورتن بودری (۲۰۱۳)</div>
+                        <span class="ref-en">Pigliucci, M., & Boudry, M. (2013). Philosophy of Pseudoscience: Reconsidering the Demarcation Problem. University of Chicago Press.</span>
+                        <p class="ref-desc">کتابی جامع برای تشخیص مرز میان علم واقعی و ادعاهای دروغین.</p>
+                    </div>
+
+                    <h3 class="ref-category">۲. مقالات پژوهشی خارجی</h3>
+                    <div class="ref-item">
+                        <div class="ref-title">طبی‌سازی طب مکمل و جایگزین: یک تحلیل تاریخی-انتقادی</div>
+                        <span class="ref-en">Monajemi, A., & Mousavi, A. H. (2022). "Medicalization of Complementary and Alternative Medicine...". Iranian Journal of Medical Ethics.</span>
+                        <p class="ref-desc">مقاله‌ای تحلیلی در اثبات وجود پدیده تجاری‌سازی و کنترل‌گری (طبی‌سازی) در طب‌های سنتی و مکمل.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">مهندسی سلامت: مدلی برای نقد و ارزیابی طبی‌سازی</div>
+                        <span class="ref-en">Monajemi, Alireza (2025). "The Engineering of Health: A Model for Critiquing and Assessing Medicalization".</span>
+                        <p class="ref-desc">ارائه یک مدل نوین برای ارزیابی روندِ تبدیل شدنِ زندگیِ عادی انسان‌ها به بیماری.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">اثر دارونما و پارادوکس تأثیرگذاری</div>
+                        <span class="ref-en">Friesen, Phoebe (2019). "Mesmer, the placebo effect, and the efficacy paradox...". Critical Public Health.</span>
+                        <p class="ref-desc">پژوهشی جذاب درباره قدرت ذهن در درمان و تفاوت نگاه پزشکی جدید و طب سنتی به حسِ خوبِ بیمار.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">نقد رویکردهای مختلف به طب اسلامی در ایران</div>
+                        <span class="ref-en">Jafari, A., & Parizi, M. S. (2023). "Criticism of different approaches to Islamic medicine in Iran". IIMJ.</span>
+                        <p class="ref-desc">مقاله‌ای که دیدگاه‌های علمیِ موافقان و مخالفان درباره ادعاهای موسوم به «طب اسلامی» را با دقت نقد می‌کند.</p>
+                    </div>
+
+                    <h3 class="ref-category">۳. منابع و مکتوبات فارسی</h3>
+                    <div class="ref-item">
+                        <div class="ref-title">تحلیل دعوای طب مکمل و پزشکی رایج در ایران (رساله دکتری)</div>
+                        <span class="ref-en">Mousavi, Amir Hassan (2023). Analysis of the Controversy between Complementary Medicines and Conventional Medicine in Iran. IHCS.</span>
+                        <p class="ref-desc">پایان‌نامه دکتری پژوهشگاه علوم انسانی که این مناقشه را از نظر فلسفی به طور عمیق ریشه‌یابی کرده است.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">کج‌تابی‌های سلامت: مصائب طب و بیراهه‌های آن در عصر جدید</div>
+                        <span class="ref-en">Mousavi, A. H. (Feb 2024). "Distortions of Health: The Sufferings of Medicine...". Iran Newspaper.</span>
+                        <p class="ref-desc">یادداشتی تفصیلی در روزنامه ایران درباره تجاری شدن سلامت و دردسرهای آن.</p>
+                    </div>
+
+                    <h3 class="ref-category">۴. رسانه‌ها، پادکست‌ها و مراجع آنلاین</h3>
+                    <div class="ref-item">
+                        <div class="ref-title">پادکست فلسفه علم - داستان یک دعوا و گزارشی از یک دفاع</div>
+                        <span class="ref-en">Philosophy of Science Podcast - Episode 23 (Amir Hassan Mousavi).</span>
+                        <p class="ref-desc">فایل صوتی تخصصی پیرامون ریشه‌های دعوای طب سنتی و پزشکی جدید.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">ویدئوی گفت‌وگوی رسانه بیوفیلیا (Biophilia)</div>
+                        <span class="ref-en">Biophilia YouTube Channel: "Traditional Medicine or Modern Medicine? What is the Controversy About?"</span>
+                        <p class="ref-desc">گفتگوی مستند درباره تاریخچه طب، مفاهیم گرمی و سردی و تفاوت روش‌های درمانی.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">فلسفه پزشکی - دانشنامه فلسفه استنفورد</div>
+                        <span class="ref-en">Reiss, J., & Ankeny, R. A. (2016). "Philosophy of Medicine". Stanford Encyclopedia of Philosophy.</span>
+                        <p class="ref-desc">معتبرترین مرجع آنلاین درباره تاریخچه و مفاهیم پایه‌ای علم پزشکی.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">دکتر هلن لانژون - پژوهشگر کشف راز طب سوزنی</div>
+                        <span class="ref-en">Helene Langevin Profile - Society for Acupuncture Research.</span>
+                        <p class="ref-desc">سوابق علمی پژوهشگری که با کمک علم امروزی نشان داد طب سوزنی چگونه روی بافت‌های پیوندیِ بدن تأثیر می‌گذارد.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 800px; margin: 0 auto;">
+            <p>© ۱۴۰۵ - توسعه یافته با نگاهی به فلسفه علم و طراحی شده برای آگاهی‌بخشی.</p>
+            <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.6; font-weight: 300;">
+               ⚠️ هشدار: تمامی محتوای این وب‌سایت به صورت کامل توسط هوش مصنوعی، به‌ویژه مدل‌های جمنای تولید و طراحی شده‌اند.
+            </p>
+        </div>
+    </footer>
+
+    <!-- جاوااسکریپت برای انیمیشن‌های اسکرول و آکاردئون -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // ۱. انیمیشن اسکرول برای تمام بخش‌های صفحه
+            const sections = document.querySelectorAll("section");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // ۲. کدهای مربوط به باز و بسته شدن بخش منابع (آکاردئون)
+            const coll = document.getElementsByClassName("collapsible");
+            for (let i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    const content = this.nextElementSibling;
+                    
+                    if (content.style.maxHeight) {
+                        // بستن آکاردئون
+                        content.style.maxHeight = null;
+                    } else {
+                        // باز کردن آکاردئون (با محاسبه ارتفاع واقعی)
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        
+                        // برای اطمینان از اینکه اگر سایز صفحه تغییر کرد محتوا مخفی نماند
+                        setTimeout(() => {
+                           if(this.classList.contains("active")) {
+                               content.style.maxHeight = "none";
+                           }
+                        }, 400); // 400ms = زمان اجرای انیمیشن در CSS
+                    } 
+                });
+            }
+        });
+    </script>
+</body>
+</html>
