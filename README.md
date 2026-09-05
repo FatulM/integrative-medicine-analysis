@@ -19,7 +19,7 @@ integrative-medicine-analysis/
 ├── index.html           # وب‌سایت (شامل HTML/CSS/JavaScript)
 ├── content.md           # متن اصلی محتوا
 ├── references.md        # کتاب‌ها، مقالات و منابع علمی
-├── infographic.png      # تصویر اینفوگرافیکی
+├── infographic*.png     # تصاویر اینفوگرافیکی
 ├── README.md            # این فایل
 ├── LICENSE              # مجوز استفاده
 └── AGENTS.md            # دستورالعمل‌های توسعه‌دهنده

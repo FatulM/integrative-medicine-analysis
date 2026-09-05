@@ -23,7 +23,7 @@ integrative-medicine-analysis/
 ├── index.html           # Website (HTML/CSS/JS)
 ├── content.md           # Main content
 ├── references.md        # Bibliography & references
-├── infographic.png      # Infographic image
+├── infographic*.png     # Infographic images
 ├── README.md            # Project overview
 ├── LICENSE              # License file
 ```
