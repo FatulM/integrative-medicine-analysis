@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دعوای طب سنتی و پزشکی جدید در ایران: نگاهی ساده و به دور از کلمات سخت</title>
+    
+    <!-- اضافه کردن فونت وزیرمتن -->
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        /* تنظیمات پایه */
+        :root {
+            --primary-color: #0f766e; /* سبز-آبی تیره */
+            --secondary-color: #14b8a6; /* سبز روشن */
+            --bg-color: #f8fafc;
+            --text-color: #334155;
+            --heading-color: #0f172a;
+            --card-bg: #ffffff;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Vazirmatn', Tahoma, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.8;
+            font-size: 17px;
+            scroll-behavior: smooth;
+        }
+
+        .github-ribbon {
+            position: fixed;
+            top: 36px;
+            right: -62px;
+            z-index: 2000;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #111827, #0f766e);
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+            padding: 10px 72px;
+            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.2);
+            transform: rotate(45deg);
+            transform-origin: center center;
+            transition: filter 0.2s ease;
+        }
+
+        .github-ribbon:hover {
+            filter: brightness(1.08);
+        }
+
+        /* هدر و ناوبری */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-color);
+        }
+
+        /* بخش هیرو (Hero) */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            margin-bottom: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 15px;
+            color: white;
+            line-height: 1.4;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* محتوای اصلی */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* استایل کارت‌های بخش‌ها */
+        section {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            scroll-margin-top: 104px;
+        }
+
+        /* کلاس برای انیمیشن اسکرول */
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* استثنا برای بخش منابع تا از همان ابتدا ظاهر شود */
+        #references-section {
+            opacity: 1 !important;
+            transform: translateY(0) !important;
+            padding: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        h2 {
+            color: var(--primary-color);
+            font-size: 1.6rem;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        ul, ol {
+            margin-right: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 10px;
+        }
+
+        strong {
+            color: var(--heading-color);
+        }
+
+        /* استایل جدول */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            font-size: 0.95rem;
+        }
+
+        th, td {
+            border: 1px solid #e2e8f0;
+            padding: 12px 15px;
+            text-align: right;
+        }
+
+        th {
+            background-color: var(--primary-color);
+            color: white;
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        tr:hover {
+            background-color: #f1f5f9;
+        }
+
+        blockquote {
+            border-right: 4px solid var(--secondary-color);
+            padding: 15px 20px;
+            margin: 20px 0;
+            background-color: #f0fdfa;
+            border-radius: 0 8px 8px 0;
+        }
+
+        blockquote p {
+            margin-bottom: 0;
+        }
+
+        /* استایل اینفوگرافیک */
+        .infographic-container {
+            margin: 40px 0;
+            text-align: center;
+        }
+
+        .infographic-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            display: block;
+            margin: 0 auto;
+            border: 4px solid white;
+        }
+        
+        .infographic-caption {
+            font-size: 0.9rem;
+            color: #64748b;
+            margin-top: 10px;
+        }
+
+        /* استایل بخش منابع (آکاردئون) */
+        .collapsible {
+            background-color: var(--primary-color);
+            color: white;
+            cursor: pointer;
+            padding: 18px 25px;
+            width: 100%;
+            border: none;
+            text-align: right;
+            outline: none;
+            font-size: 1.2rem;
+            font-family: inherit;
+            font-weight: 700;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .collapsible:hover, .collapsible.active {
+            background-color: var(--heading-color);
+        }
+
+        .collapsible:after {
+            content: '\002B'; /* علامت مثبت */
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .collapsible.active:after {
+            content: "\2212"; /* علامت منفی */
+        }
+
+        .content {
+            padding: 0 15px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background-color: transparent;
+        }
+
+        .content-inner {
+            padding: 20px 0;
+        }
+
+        .ref-category {
+            color: var(--primary-color);
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-bottom: 2px dashed #cbd5e1;
+            padding-bottom: 5px;
+        }
+
+        .ref-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-right: 4px solid var(--secondary-color);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+        }
+
+        .ref-title {
+            font-weight: bold;
+            color: var(--heading-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .ref-en {
+            font-size: 0.9rem;
+            color: #475569;
+            direction: ltr;
+            text-align: left;
+            margin-bottom: 12px;
+            font-family: Tahoma, Arial, sans-serif;
+            background-color: #f1f5f9;
+            padding: 8px 12px;
+            border-radius: 4px;
+            display: block;
+            border-left: 3px solid #cbd5e1;
+        }
+
+        .ref-desc {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            margin-bottom: 0;
+        }
+
+        /* فوتر */
+        footer {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 30px;
+            background-color: var(--heading-color);
+            color: white;
+            margin-top: 60px;
+        }
+
+        /* ریسپانسیو برای موبایل */
+        @media (max-width: 768px) {
+            header {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            .github-ribbon {
+                top: 28px;
+                right: -66px;
+            }
+            section {
+                padding: 25px;
+            }
+            h2 {
+                font-size: 1.4rem;
+            }
+            table {
+                font-size: 0.8rem;
+            }
+            th, td {
+                padding: 8px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a class="github-ribbon" href="https://github.com/FatulM/integrative-medicine-analysis" target="_blank" rel="noopener noreferrer" aria-label="دنبال‌کننده پروژه در گیت‌هاب">برو به گیت‌هاب</a>
+
+    <header>
+        <div class="nav-container">
+            <ul class="nav-links">
+                <li><a href="#intro">مقدمه</a></li>
+                <li><a href="#section2">انواع درمان‌ها</a></li>
+                <li><a href="#section3">شبه‌علم</a></li>
+                <li><a href="#section8">طب سوزنی</a></li>
+                <li><a href="#references-section">منابع</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>دعوای طب سنتی و پزشکی جدید در ایران</h1>
+        <p>نگاهی ساده و به دور از کلمات سخت، به یکی از بزرگ‌ترین بحث‌های سلامت در جامعه امروز</p>
+    </div>
+
+    <main>
+        <!-- مقدمه -->
+        <section id="intro">
+            <h2>۱. چرا این بحث این‌قدر مهم شده است؟</h2>
+            <p>امروزه در ایران یک بحث بزرگ در جریان است: از یک طرف «پزشکی جدید و رسمی» قرار دارد که بر پایه آزمایش و آمار کار می‌کند، و از طرف دیگر «طب سنتی و گیاهی» روزبه‌روز طرفدار بیشتری پیدا می‌کند.</p>
+            <p>این فقط یک بحث دانشگاهی نیست. سوال اصلی این است: باید حرف چه کسی را باور کنیم؟ آزمایشگاه‌ها و تحقیقات جدید، یا کتاب‌های قدیمی و روش‌های گذشته؟</p>
+            <p>این تصمیم خیلی مهم است، چون هم روی هزینه‌های درمان و پول مردم اثر دارد، و هم روی جان و سلامتی‌شان. وقتی این دعوا حل نشود، بیماران سرگردان می‌مانند و اعتماد به پزشکان هم کم می‌شود. برای همین بهتر است ریشه این اختلاف را به زبان ساده بررسی کنیم.</p>
+        </section>
+
+        <!-- جایگاه اینفوگرافیک لنداسکیپ -->
+        <div class="infographic-container">
+            <img src="infographic.png" alt="اینفوگرافیک مقایسه طب سنتی و پزشکی جدید">
+            <p class="infographic-caption">خلاصه تصویری: تفاوت دیدگاه‌ها و رویکردها در نظام‌های درمانی مختلف</p>
+        </div>
+
+        <!-- بخش دوم -->
+        <section id="section2">
+            <h2>۲. کلمات را قاطی نکنیم: انواع درمان‌های سنتی و مکمل کدامند؟</h2>
+            <p>بخش زیادی از سوءتفاهم‌های امروز به این خاطر است که معنی چند کلمه با هم قاطی شده است. بیایید ببینیم در ایران با چه روش‌هایی روبه‌رو هستیم:</p>
+            <ul>
+                <li><strong>طب سنتی ایرانی (مزاج‌شناسی):</strong> یک روش درمانی است که بر اساس تجربه شکل گرفته و می‌گوید بدن انسان از چهار بخش (دم، صفرا، بلغم و سودا) تشکیل شده است. اگر تعادل این چهار بخش به هم بخورد، انسان بیمار می‌شود. این روش ربطی به دین ندارد.</li>
+                <li><strong>طب سوزنی:</strong> چینی‌های قدیم می‌گفتند در بدن یک انرژی خاص جریان دارد. اگر این انرژی گیر کند، انسان بیمار می‌شود. با فرو کردن سوزن‌های باریک در نقاط خاصی از بدن، سعی می‌کنند این انرژی را دوباره به جریان بیندازند.</li>
+                <li><strong>گیاه‌درمانی (عطاری):</strong> استفاده از گیاهان برای درمان بیماری. نکته مهم این است که داروهای گیاهی هم می‌توانند با داروهای شیمیایی تداخل داشته باشند و به بدن آسیب بزنند.</li>
+                <li><strong>بادکش‌درمانی:</strong> یک روش قدیمی است که با ایجاد مکش روی پوست، ادعا می‌شود سموم بدن بیرون می‌آید و خون بهتر پخش می‌شود.</li>
+                <li><strong>طب اسلامی (ادعایی):</strong> گروهی هستند که توصیه‌های درمانی را از احادیث و روایات دینی بیرون می‌کشند و آن را جای پزشکی می‌گذارند. باید مراقب باشیم دستورات معتبر دینی را با حرف‌های ساختگی که به اسم دین گفته می‌شود اشتباه نگیریم.</li>
+            </ul>
+            <p>خطر اصلی جایی است که عده‌ای طب سنتی را به مقدسات و دین گره می‌زنند. حتی در گذشته، خیلی از علمای دین هم این توصیه‌ها را نصیحت‌های اخلاقی می‌دانستند، نه دستور قطعی دینی. اما وقتی یک روش درمانی به مقدسات وصل شود، دیگر کسی جرئت نمی‌کند آن را نقد کند یا بگوید اشتباه است. همین موضوع راه پیشرفت علم را می‌بندد.</p>
+            <p>نکته مهم این است که ما یک «طب سنتی علمی» داریم که زیر نظر پزشکان آموزش‌دیده انجام می‌شود، و یک «طب غیرعلمی» که افراد بدون مدرک و تخصص انجام می‌دهند.</p>
+        </section>
+
+        <!-- بخش سوم -->
+        <section id="section3">
+            <h2>۳. شبه‌علم چیست و چگونه ما را گول می‌زند؟</h2>
+            <p>«شبه‌علم» یعنی حرف‌هایی که ظاهر علمی دارند اما در واقع علمی نیستند و از آزمایش‌های واقعی فرار می‌کنند. کسانی که شبه‌علم را تبلیغ می‌کنند معمولاً این سه ویژگی را دارند:</p>
+            <ol>
+                <li><strong>بدون آزمایش ادعا می‌کنند:</strong> می‌گویند «این روش روی چند نفر جواب داده، پس حتماً درست است» و حاضر نیستند آن را در آزمایشگاه تست کنند.</li>
+                <li><strong>پشت دین یا تاریخ قدیمی قایم می‌شوند:</strong> از مقدسات یا قدمت تاریخی استفاده می‌کنند تا کسی از آن‌ها سوال نپرسد.</li>
+                <li><strong>می‌گویند بدن هر کس فرق دارد:</strong> ادعا می‌کنند چون بدن هر انسان با دیگری متفاوت است، نمی‌شود درمان آن‌ها را با آزمایش استاندارد سنجید.</li>
+            </ol>
+            <p>در پزشکی واقعی، یک درمان باید علاوه بر آمار و ارقام، با قوانین واقعی بدن (زیست‌شناسی، فیزیک و شیمی) هم‌خوانی داشته باشد. اگر روشی با قوانین طبیعت جور در نیاید، حتی اگر چند نفر بگویند خوب شده‌اند، باز هم علمی نیست.</p>
+        </section>
+
+        <!-- بخش چهارم -->
+        <section id="section4">
+            <h2>۴. مشکل آزمایش داروها: چرا حس خوبِ بیمار نادیده گرفته می‌شود؟</h2>
+            <p>یکی از بزرگ‌ترین بحث‌ها بر سر کلمه «تأثیرگذاری» است. پزشکی جدید برای اینکه بفهمد یک دارو واقعاً اثر دارد یا نه، آن را در شرایط سخت آزمایشگاهی تست می‌کند. هدف این است که اثر خالص ماده شیمیایی پیدا شود و چیزهایی مثل «رابطه خوب پزشک و بیمار» یا «باور بیمار به خوب شدن» کنار گذاشته شوند (به این حس خوب، در زبان پزشکی می‌گویند اثر دارونما).</p>
+            <p>اما مشکل همین‌جاست: در طب سنتی، بخش بزرگی از بهبود بیمار به خاطر همان رابطه گرم بین درمانگر و بیمار و آرامشی است که پیدا می‌کند. وقتی پزشکی جدید این بخش را در آزمایش‌هایش حذف می‌کند، در واقع بخشی از واقعیت درمان را نادیده می‌گیرد. ممکن است یک داروی گیاهی به خاطر همین آرامش، درد بیمار را خیلی کم کند، اما آزمایشگاه بگوید «این دارو بی‌اثر است».</p>
+            <p>با این حال، این موضوع به این معنی نیست که هر روشی که حس خوب می‌دهد، بیماری را هم درمان می‌کند. در بیماری‌های سخت مثل سرطان، اگر پزشکی جدید کنار گذاشته شود و فقط سراغ روش‌هایی برویم که فقط حس خوب می‌دهند، خطر جانی جبران‌ناپذیر خواهد بود.</p>
+        </section>
+
+        <!-- بخش پنجم -->
+        <section id="section5">
+            <h2>۵. چرا نباید فکر کنیم هر چیز «طبیعی»، بدون خطر است؟</h2>
+            <p>خیلی از مردم فکر می‌کنند اگر داروهای گیاهی و روش‌های طبیعی فایده نداشته باشند، حداقل ضرر هم ندارند. اما این فکر اشتباه است:</p>
+            <ul>
+                <li><strong>نبود نظارت:</strong> خیلی از این روش‌ها هیچ قانون و استاندارد مشخصی ندارند.</li>
+                <li><strong>داروهای تقلبی:</strong> گاهی در عطاری‌ها به داروی گیاهی، مواد شیمیایی خطرناک اضافه می‌کنند تا بیمار فکر کند زود خوب شده است.</li>
+                <li><strong>اثر تلقین:</strong> خیلی وقت‌ها بیمار به خاطر صحبت طولانی با درمانگر و احساس آرامش، فکر می‌کند خوب شده، در حالی که خود بیماری درمان نشده است.</li>
+            </ul>
+        </section>
+
+        <!-- بخش ششم -->
+        <section id="section6">
+            <h2>۶. آیا داروهای جدید همیشه معجزه می‌کنند؟</h2>
+            <p>برخی از دانشمندان و فیلسوفان علم می‌گویند نباید بیش از حد به پزشکی جدید هم خوش‌بین بود. دلیلشان ساده است: بدن انسان به قدری پیچیده است که پیدا کردن «داروی معجزه‌آسا» (مثل پنی‌سیلین که یک‌باره عفونت را از بین می‌برد) خیلی کمیاب شده است. بیشتر داروهای جدید امروزی فقط تغییرات کوچکی ایجاد می‌کنند.</p>
+            <p>این محققان می‌گویند شرکت‌های داروسازی گاهی در تأثیر داروهایشان اغراق می‌کنند: آزمایش‌هایی که شکست خورده‌اند را پنهان می‌کنند و فقط نتایج مثبت را نشان می‌دهند، چون به دنبال سود مالی خودشان هستند.</p>
+            <p>نتیجه این حرف‌ها این نیست که باید سراغ خرافات برویم، بلکه یادآوری می‌کند که بهترین راه سلامتی، <strong>اصلاح سبک زندگی</strong> (تغذیه درست و ورزش) است، و نباید برای هر چیز کوچکی سریع سراغ دارو رفت.</p>
+        </section>
+
+        <!-- بخش هفتم -->
+        <section id="section7">
+            <h2>۷. دو روی سکه: طب دانشگاهی در برابر مدعیان دروغین</h2>
+            <p>در ایران امروز، باید دو نوع طب سنتی را از هم جدا کنیم:</p>
+            <ul>
+                <li><strong>طب سنتی دانشگاهی:</strong> پزشکان متخصصی که کتاب‌های قدیمی را می‌خوانند، اما آن‌ها را با دستگاه‌ها و دانش امروزی آزمایش می‌کنند تا درست را از غلط تشخیص دهند.</li>
+                <li><strong>مدعیان دروغین (شبه‌علم):</strong> کسانی که تمام علم امروزی را رد می‌کنند، تخصص پزشکی ندارند و گاهی با استفاده از نام دین، جان مردم را به خطر می‌اندازند؛ مثلاً بیماران را از درمان‌های اصلی مثل شیمی‌درمانی برای سرطان منع می‌کنند که می‌تواند به مرگ بیمار منجر شود.</li>
+            </ul>
+            <p>پس دعوای اصلی در ایران، دعوای سنت و مدرنیته نیست؛ بلکه دعوای «عقل و منطق» در برابر «ادعاهای دروغین و خطرناک» است. عطاری‌ها فقط باید گیاه بفروشند و حق تشخیص بیماری یا تجویز درمان را ندارند.</p>
+        </section>
+
+        <!-- بخش هشتم -->
+        <section id="section8">
+            <h2>۸. کشف راز طب سوزنی: آشتی سنت و علم</h2>
+            <p>یکی از جذاب‌ترین اتفاقات علمی، زمانی بود که علم جدید توانست راز طب سوزنی را کشف کند. قرن‌ها می‌گفتند طب سوزنی بر اساس جریان انرژی‌های نامرئی در بدن کار می‌کند.</p>
+            <p>اما تحقیقات جدید نشان داد که بیشتر نقاط طب سوزنی، دقیقاً همان جاهایی هستند که «بافت‌های پیوندی» (پرده‌های نازک زیر پوست) قرار دارند. وقتی سوزن وارد پوست می‌شود و می‌چرخد، این بافت‌ها کشیده و تحریک می‌شوند. این تحریک باعث می‌شود سلول‌های بدن ماده‌ای به نام «آدنوزین» ترشح کنند که یک مسکن طبیعی است و درد و التهاب را کم می‌کند.</p>
+            <p>پس اثر طب سوزنی به خاطر «انرژی‌های عجیب و غریب» نیست، بلکه یک واکنش واقعی و طبیعی در سلول‌های بدن است. این یک نمونه زیبا از آشتی بین علم و سنت است.</p>
+        </section>
+
+        <!-- بخش نهم -->
+        <section id="section9">
+            <h2>۹. وقتی زندگی عادی تبدیل به بیماری می‌شود!</h2>
+            <p>برخی محققان هشدار جالبی می‌دهند: پزشکی جدید گاهی کاری کرده که خیلی از اتفاقات طبیعی زندگی (مثل پیر شدن یا ریزش مو) به عنوان «بیماری» شناخته شوند تا برایشان دارو فروخته شود.</p>
+            <p>خیلی از مردم برای فرار از این وضعیت به طب سنتی پناه می‌برند، اما طب سنتی هم گاهی در همین تله می‌افتد و حتی بدتر عمل می‌کند. به این کار می‌گویند «طبی‌سازی زندگی». در برخی شاخه‌های طب سنتی غیراصولی، تمام جزئیات زندگی شما (چه می‌خورید، چقدر می‌خوابید، چه احساسی دارید، حتی با چه کسی رفت‌وآمد کنید) زیر ذره‌بین قرار می‌گیرد. به شما می‌گویند «مزاجت به هم ریخته» و برای هر کار عادی روزانه، یک تجویز یا پرهیز می‌دهند.</p>
+            <p>نتیجه این کار، کنترل شدید زندگی شماست، به بهانه سلامتی؛ و در کنارش، یک بازار پرسود برای فروش محصولات «اصلاح مزاج» شکل می‌گیرد.</p>
+        </section>
+
+        <!-- مقایسه روش‌های مختلف درمان -->
+        <section id="section10">
+            <h2>۱۰. مقایسه روش‌های مختلف درمان (در یک نگاه)</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ویژگی</th>
+                        <th>پزشکی جدید</th>
+                        <th>طب سنتی (مزاجی)</th>
+                        <th>طب سوزنی</th>
+                        <th>طب اسلامی</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>پایه و اساس</strong></td>
+                        <td>آزمایش و آمار علمی</td>
+                        <td>تجربه و منطق قدیمی</td>
+                        <td>جریان انرژی در بدن</td>
+                        <td>احادیث و متون دینی</td>
+                    </tr>
+                    <tr>
+                        <td><strong>تعریف بیماری</strong></td>
+                        <td>خراب شدن کار سلول‌ها</td>
+                        <td>به‌هم خوردن تعادل مزاج</td>
+                        <td>گیر کردن مسیر انرژی</td>
+                        <td>به‌هم خوردن تعادل جسم و روح</td>
+                    </tr>
+                    <tr>
+                        <td><strong>روش اثبات</strong></td>
+                        <td>تکرار آزمایش در آزمایشگاه</td>
+                        <td>کتاب‌های قدیمی و تجربه</td>
+                        <td>احساس بهبودی بیمار</td>
+                        <td>متون دینی</td>
+                    </tr>
+                    <tr>
+                        <td><strong>نوع دارو</strong></td>
+                        <td>ماده شیمیایی با اثر مشخص</td>
+                        <td>گیاهان برای تغییر مزاج</td>
+                        <td>تحریک بدن با سوزن</td>
+                        <td>توصیه‌های دینی</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- نتیجه‌گیری -->
+        <section id="conclusion">
+            <h2>۱۱. نتیجه‌گیری: بالاخره چه کار کنیم؟</h2>
+            <p>دعوای بین طب سنتی و پزشکی جدید تنها با «عقل و منطق» حل می‌شود، نه با تعصب. هدف هر نوع درمانی، کم کردن درد و رنج انسان است و این هدف نباید قربانی تعصب یا سود مالی عده‌ای خاص شود.</p>
+            <p>چند نکته ساده برای راهنمایی:</p>
+            <ol>
+                <li>عطاری‌ها یا کسانی که فقط چند کتاب قدیمی خوانده‌اند، هرگز جای پزشک متخصص را نمی‌گیرند.</li>
+                <li>سلامتی ما جای امتحان کردن ادعاهای بی‌اساس نیست؛ هرگز درمان اصلی و علمی را به امید ادعاهای ثابت‌نشده رها نکنید.</li>
+                <li>استفاده از گیاهان باید بر اساس خواص واقعی آن‌ها باشد، نه حرف‌های عجیب درباره انرژی.</li>
+                <li>همیشه اولویت با روش‌هایی است که ایمنی و اثر آن‌ها در آزمایشگاه‌های معتبر ثابت شده باشد.</li>
+            </ol>
+            <p>در نهایت، ما به نگاهی نیاز داریم که به آن «سلامت کل انسان» می‌گویند: بیمار فقط یک ماشین خراب نیست که نیاز به تعمیر قطعه داشته باشد، بلکه یک انسان است با احساسات و شرایط زندگی خاص خودش. پایان این دعوا زمانی است که «دقت علم جدید» را با «نگاه کلی و پیشگیرانه طب سنتی درست» ترکیب کنیم، و اجازه ندهیم مدعیان دروغین با جان و روان مردم بازی کنند.</p>
+        </section>
+
+        <!-- بخش منابع (باز و بسته شونده) -->
+        <section id="references-section">
+            <button type="button" class="collapsible">منابع و مراجع علمی (برای مطالعه بیشتر)</button>
+            <div class="content">
+                <div class="content-inner">
+                    
+                    <h3 class="ref-category">۱. کتاب‌ها و منابع مرجع</h3>
+                    <div class="ref-item">
+                        <div class="ref-title">نیهیلیسم پزشکی - نویسنده: جیکوب استگننگا (۲۰۱۸)</div>
+                        <span class="ref-en">Stegenga, Jacob (2018). Medical Nihilism. Oxford University Press.</span>
+                        <p class="ref-desc">کتاب اصلی و جریان‌ساز استاد فلسفه پزشکی دانشگاه کمبریج در پیشنهادِ رویکرد «پزشکی ملایم» (Gentle Medicine).</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">فلسفه شبه‌علم: بازنگری در مسئله مرزبندی - ویراستاران: ماسیمو پیلیوچی و مورتن بودری (۲۰۱۳)</div>
+                        <span class="ref-en">Pigliucci, M., & Boudry, M. (2013). Philosophy of Pseudoscience: Reconsidering the Demarcation Problem. University of Chicago Press.</span>
+                        <p class="ref-desc">کتابی جامع برای تشخیص مرز میان علم واقعی و ادعاهای دروغین.</p>
+                    </div>
+
+                    <h3 class="ref-category">۲. مقالات پژوهشی خارجی</h3>
+                    <div class="ref-item">
+                        <div class="ref-title">طبی‌سازی طب مکمل و جایگزین: یک تحلیل تاریخی-انتقادی</div>
+                        <span class="ref-en">Monajemi, A., & Mousavi, A. H. (2022). "Medicalization of Complementary and Alternative Medicine...". Iranian Journal of Medical Ethics.</span>
+                        <p class="ref-desc">مقاله‌ای تحلیلی در اثبات وجود پدیده تجاری‌سازی و کنترل‌گری (طبی‌سازی) در طب‌های سنتی و مکمل.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">مهندسی سلامت: مدلی برای نقد و ارزیابی طبی‌سازی</div>
+                        <span class="ref-en">Monajemi, Alireza (2025). "The Engineering of Health: A Model for Critiquing and Assessing Medicalization".</span>
+                        <p class="ref-desc">ارائه یک مدل نوین برای ارزیابی روندِ تبدیل شدنِ زندگیِ عادی انسان‌ها به بیماری.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">اثر دارونما و پارادوکس تأثیرگذاری</div>
+                        <span class="ref-en">Friesen, Phoebe (2019). "Mesmer, the placebo effect, and the efficacy paradox...". Critical Public Health.</span>
+                        <p class="ref-desc">پژوهشی جذاب درباره قدرت ذهن در درمان و تفاوت نگاه پزشکی جدید و طب سنتی به حسِ خوبِ بیمار.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">نقد رویکردهای مختلف به طب اسلامی در ایران</div>
+                        <span class="ref-en">Jafari, A., & Parizi, M. S. (2023). "Criticism of different approaches to Islamic medicine in Iran". IIMJ.</span>
+                        <p class="ref-desc">مقاله‌ای که دیدگاه‌های علمیِ موافقان و مخالفان درباره ادعاهای موسوم به «طب اسلامی» را با دقت نقد می‌کند.</p>
+                    </div>
+
+                    <h3 class="ref-category">۳. منابع و مکتوبات فارسی</h3>
+                    <div class="ref-item">
+                        <div class="ref-title">تحلیل دعوای طب مکمل و پزشکی رایج در ایران (رساله دکتری)</div>
+                        <span class="ref-en">Mousavi, Amir Hassan (2023). Analysis of the Controversy between Complementary Medicines and Conventional Medicine in Iran. IHCS.</span>
+                        <p class="ref-desc">پایان‌نامه دکتری پژوهشگاه علوم انسانی که این مناقشه را از نظر فلسفی به طور عمیق ریشه‌یابی کرده است.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">کج‌تابی‌های سلامت: مصائب طب و بیراهه‌های آن در عصر جدید</div>
+                        <span class="ref-en">Mousavi, A. H. (Feb 2024). "Distortions of Health: The Sufferings of Medicine...". Iran Newspaper.</span>
+                        <p class="ref-desc">یادداشتی تفصیلی در روزنامه ایران درباره تجاری شدن سلامت و دردسرهای آن.</p>
+                    </div>
+
+                    <h3 class="ref-category">۴. رسانه‌ها، پادکست‌ها و مراجع آنلاین</h3>
+                    <div class="ref-item">
+                        <div class="ref-title">پادکست فلسفه علم - داستان یک دعوا و گزارشی از یک دفاع</div>
+                        <span class="ref-en">Philosophy of Science Podcast - Episode 23 (Amir Hassan Mousavi).</span>
+                        <p class="ref-desc">فایل صوتی تخصصی پیرامون ریشه‌های دعوای طب سنتی و پزشکی جدید.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">ویدئوی گفت‌وگوی رسانه بیوفیلیا (Biophilia)</div>
+                        <span class="ref-en">Biophilia YouTube Channel: "Traditional Medicine or Modern Medicine? What is the Controversy About?"</span>
+                        <p class="ref-desc">گفتگوی مستند درباره تاریخچه طب، مفاهیم گرمی و سردی و تفاوت روش‌های درمانی.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">فلسفه پزشکی - دانشنامه فلسفه استنفورد</div>
+                        <span class="ref-en">Reiss, J., & Ankeny, R. A. (2016). "Philosophy of Medicine". Stanford Encyclopedia of Philosophy.</span>
+                        <p class="ref-desc">معتبرترین مرجع آنلاین درباره تاریخچه و مفاهیم پایه‌ای علم پزشکی.</p>
+                    </div>
+                    <div class="ref-item">
+                        <div class="ref-title">دکتر هلن لانژون - پژوهشگر کشف راز طب سوزنی</div>
+                        <span class="ref-en">Helene Langevin Profile - Society for Acupuncture Research.</span>
+                        <p class="ref-desc">سوابق علمی پژوهشگری که با کمک علم امروزی نشان داد طب سوزنی چگونه روی بافت‌های پیوندیِ بدن تأثیر می‌گذارد.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div style="display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 800px; margin: 0 auto;">
+            <p>© ۱۴۰۵ - توسعه یافته با نگاهی به فلسفه علم و طراحی شده برای آگاهی‌بخشی.</p>
+            <p style="font-size: 0.9rem; color: #cbd5e1; line-height: 1.6; font-weight: 300;">
+               ⚠️ هشدار: تمامی محتوای این وب‌سایت به صورت کامل توسط هوش مصنوعی، به‌ویژه مدل‌های جمنای گوکل، تولید شده‌ است.
+            </p>
+        </div>
+    </footer>
+
+    <!-- جاوااسکریپت برای انیمیشن‌های اسکرول و آکاردئون -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // ۱. انیمیشن اسکرول برای تمام بخش‌های صفحه
+            const sections = document.querySelectorAll("section");
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("visible");
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // ۲. کدهای مربوط به باز و بسته شدن بخش منابع (آکاردئون)
+            const coll = document.getElementsByClassName("collapsible");
+            for (let i = 0; i < coll.length; i++) {
+                coll[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    const content = this.nextElementSibling;
+                    
+                    if (content.style.maxHeight) {
+                        // بستن آکاردئون
+                        content.style.maxHeight = null;
+                    } else {
+                        // باز کردن آکاردئون (با محاسبه ارتفاع واقعی)
+                        content.style.maxHeight = content.scrollHeight + "px";
+                        
+                        // برای اطمینان از اینکه اگر سایز صفحه تغییر کرد محتوا مخفی نماند
+                        setTimeout(() => {
+                           if(this.classList.contains("active")) {
+                               content.style.maxHeight = "none";
+                           }
+                        }, 400); // 400ms = زمان اجرای انیمیشن در CSS
+                    } 
+                });
+            }
+        });
+    </script>
+</body>
+</html>
