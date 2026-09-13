@@ -2,7 +2,7 @@
 
 ## Project Description
 
-This is a static Persian (Farsi) website analyzing the debate between traditional medicine and modern medicine in Iran. The site is built from `content.md` and `references.md` source files, with all HTML/CSS/JS contained in a single `index.html` file.
+This is a static Persian (Farsi) website analyzing the debate between traditional medicine and modern medicine in Iran. The site is built from `content.md` and `references.md` source files, with all HTML/CSS/JS contained in a single `docs/index.html` file.
 
 ## Conventions
 
@@ -20,10 +20,15 @@ This is a static Persian (Farsi) website analyzing the debate between traditiona
 
 ```
 integrative-medicine-analysis/
-├── index.html           # Website (HTML/CSS/JS)
-├── content.md           # Main content
-├── references.md        # Bibliography & references
-├── infographic*.png     # Infographic images
+├── docs/                # All published website files (HTML/CSS/JS assets)
+│   ├── index.html       # Website (HTML/CSS/JS)
+│   ├── infographic*.png # Infographic images
+│   └── robots.txt       # Robots file
+├── content.md           # Main content (source)
+├── references.md        # Bibliography & references (source)
+├── archive/             # Older site versions (not published)
+├── _config.yml          # Publish config (publish_dir: docs)
 ├── README.md            # Project overview
 ├── LICENSE              # License file
+└── AGENTS.md            # Agent instructions
 ```

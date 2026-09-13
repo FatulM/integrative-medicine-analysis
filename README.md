@@ -16,10 +16,14 @@
 
 ```
 integrative-medicine-analysis/
-├── index.html           # وب‌سایت (شامل HTML/CSS/JavaScript)
-├── content.md           # متن اصلی محتوا
-├── references.md        # کتاب‌ها، مقالات و منابع علمی
-├── infographic*.png     # تصاویر اینفوگرافیکی
+├── docs/                # فایل‌های منتشرشده وب‌سایت (HTML/CSS/JS Assets)
+│   ├── index.html       # وب‌سایت (شامل HTML/CSS/JavaScript)
+│   ├── infographic*.png # تصاویر اینفوگرافیکی
+│   └── robots.txt       # فایل robots
+├── content.md           # متن اصلی محتوا (منبع)
+├── references.md        # کتاب‌ها، مقالات و منابع علمی (منبع)
+├── archive/             # نسخه‌های قدیمی محتوا (منتشر نمی‌شود)
+├── _config.yml          # تنظیمات انتشار (publish_dir: docs)
 ├── README.md            # این فایل
 ├── LICENSE              # مجوز استفاده
 └── AGENTS.md            # دستورالعمل‌های توسعه‌دهنده
@@ -28,10 +32,12 @@ integrative-medicine-analysis/
 ## 🌐 چگونه از سایت استفاده کنیم
 
 ### مشاهده آنلاین
-فایل `index.html` را در یک مرورگر وب باز کنید. سایت کاملاً ایستا است و نیازی به سرور یا نصب نرم‌افزاری ندارد.
+
+فایل `docs/index.html` را در یک مرورگر وب باز کنید. سایت کاملاً ایستا است و نیازی به سرور یا نصب نرم‌افزاری ندارد.
 
 ```bash
 # یا می‌توانید یک سرور محلی راه‌اندازی کنید:
+cd docs
 python3 -m http.server 8000
 # سپس به http://localhost:8000 بروید
 ```
